@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: AUTH-SERVICE
+  config:
+    import: "configserver:http://localhost:9296"
+
+server:
+  port: 9005

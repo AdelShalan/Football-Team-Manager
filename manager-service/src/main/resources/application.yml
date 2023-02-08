@@ -1,0 +1,13 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: MANAGER-SERVICE
+  h2:
+    console.enabled: true
+  datasource:
+    url: jdbc:h2:mem:manager-service
+    driver-class-name: org.h2.Driver
+    username:
+    password:
