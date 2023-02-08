@@ -2,7 +2,7 @@
 A practice spring boot project built upon the Microservice architecture.
 
 In this practice project I aim to implement a fully working web application using some of the latest java back-end development technologies and libraries. 
-Here I'm exposing a set of secure API endpoints, for the user to control the system, below is a list of all available endpoints + a brief explanation on each one.
+Here I'm exposing a set of secure API endpoints, for the user to control the system, below is a list of all available endpoints + a brief description.
 
 ***Autherntication Service***
   1. /login
@@ -12,20 +12,20 @@ Here I'm exposing a set of secure API endpoints, for the user to control the sys
   1. /createPlayer
   2. /getPlayer
   3. /offer/viewOffers
-  4. /offer/acceptOffer
+  4. /offer/acceptOffer: (if eligible, forwards a request to contract service to create a new contract between the player and the team)
 
 ***Manager Service***
   1. /createManager
-  2. /assignManagerTeam
+  2. /assignManagerTeam: (forwards a request to the team service's assignTeamManager)
   3. /getManagerTeam
-  4. /sendOffer
+  4. /sendOffer: (produces a kafka event in the kafka topic "offers")
 
 ***Team Service***
   1. /createTeam
   2. /assignTeamManager
-  3. /{teamId}/info
+  3. /{teamId}/info: (retrives team's name, id, manager entity, & player entities)
   
-***Contract Service***
+***Contract Service***: (a contract is an explicit relationship between a player and a team)
   1. /createContract
   2. /getTeamPlayers
 
